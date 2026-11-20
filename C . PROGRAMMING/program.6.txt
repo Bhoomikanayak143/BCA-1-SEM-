@@ -1,0 +1,42 @@
+CREATE TABLE department (
+    dept_id INT PRIMARY KEY,
+    department VARCHAR(30),
+    location VARCHAR(30)
+);
+
+INSERT INTO department VALUES
+(1, 'BCA', 'Block A'),
+(2, 'BCom', 'Block B'),
+(3, 'BBA', 'Block C');
+SELECT student.name,
+       student.department,
+       department.location
+FROM student
+INNER JOIN department
+ON student.department = department.department;
+
+SELECT student.name,
+       department.location
+FROM student
+LEFT JOIN department
+ON student.department = department.department;
+
+SELECT student.name,
+       department.department
+FROM student
+RIGHT JOIN department
+ON student.department = department.departmet
+SELECT student.name,
+       department.department
+FROM student
+CROSS JOIN department;
+
+
+
+SELECT A.name AS Student1,
+       B.name AS Student2,
+       A.department
+FROM student A
+JOIN student B
+ON A.department = B.department
+WHERE A.id < B.id;
